@@ -63,7 +63,7 @@ namespace WaveAnalyer
         private Form1 form;
 
         // C# playback variables
-        //SoundPlayer player;
+        SoundPlayer player;
 
         // Header data passed into a WaveReader object
         byte[] chunkID = new byte[] { 0x52, 0x49, 0x46, 0x46 };
@@ -301,11 +301,11 @@ namespace WaveAnalyer
         {
 
             // win32 code
-            waveOut = this.callbackWaveOut;
-            play(waveOut);
+            //waveOut = this.callbackWaveOut;
+            //play(waveOut);
 
             // C# code
-            /* if (samples.Length != 0)
+             if (samples.Length != 0)
              {
                  byte[] tmp = new byte[samples.Length + 44];
 
@@ -331,7 +331,7 @@ namespace WaveAnalyer
                      player.Play();
                      //System.IO.File.WriteAllBytes("TEST.wav", tmp);
                  }
-             }*/
+             }
         }
 
         /*
@@ -393,13 +393,13 @@ namespace WaveAnalyer
         private void endPlayBtn_Click(object sender, EventArgs e)
         {
             // C# code
-            /*if(player != null)
+            if(player != null)
             {
                 player.Stop();
-            }*/
+            }
 
             // win32 code
-            waveOutReset(handle2);
+            //waveOutReset(handle2);
         }
 
         /*
